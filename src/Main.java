@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         String choice;
+        int a;
         Scanner sc = new Scanner(System.in);
         System.out.println("1. Έκδοση-αγορά\n" + "2. Ανανέωση\n" + "3. Ενημέρωση περιεχομένου\n" + "\nΠαρακαλώ επιλέξτε μία από τις " +
                 "παραπάνω ενέργειες ");
