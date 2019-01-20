@@ -15,6 +15,10 @@ public class Eticket {
 
     //CONSTRUCTORRRR??/
 
+    public Eticket(){
+
+    }
+
 
     public String getGenre(){
         return genre;
