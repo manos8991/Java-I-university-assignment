@@ -47,7 +47,7 @@ public class Main {
         choise = sc.next();
         while(!choise.equals("quit")){
             Eticket Eticket1 = new Eticket();
-            
+
 
         }
 
