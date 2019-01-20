@@ -40,7 +40,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int i = 0;
+        int i = 0; //agfs
         printMenu(0);
         String choise;
         Scanner sc = new Scanner(System.in);
