@@ -7,7 +7,7 @@ import java.util.Set;
 public class Main {
 
     public static void printMenu(int input) {
-        String[] Menu = new String[10];
+        String[] Menu = new String[11];
         Menu[0] = "1. Έκδοση-αγορά\n" +
                   "2. Ανανέωση\n" +
                   "3. Ενημέρωση περιεχομένου\n" +
@@ -34,26 +34,45 @@ public class Main {
                   "1. Ηλεκτρονική μορφή\n"+
                   "2. Έντυπη μορφή ";
         Menu[8] = "Παρακαλώ εισάγετε το Email σας για να σας αποσταλεί το εισιτήριο\n";
+        Menu[9] = "Παρακαλώ επιλέξτε τι θα θέλατε να ανανεώσετε\n"+
+                  "1. Αγορά επιπλέον διαδρομών\n"+
+                  "2. Αγορά επιπλέον χρόνου\n";
+        Menu[10] = "Σφάλμα,παρακαλώ επιλέξτε ξανά\n";
         System.out.println(Menu[input]);
 
 
     }
 
     public static void main(String[] args) {
-        int i = 0; //agfs
         printMenu(0);
         String choise;
         Scanner sc = new Scanner(System.in);
         choise = sc.next();
         while(!choise.equals("quit")){
             Eticket Eticket1 = new Eticket();
+            switch(choise){
+                case "1" :  printMenu(1);
+                            Eticket1.setType(sc.next());
+                            while(!Eticket1.getType().equals("1") && !Eticket1.getType().equals("2")) {
+                                printMenu(1);
+                                Eticket1.setType(sc.next());
+                            }
+                            printMenu(2);
+                            Eticket1.setDuration(sc.next());
+                            if(Eticket1.getDuration().equals("1")){
+                                printMenu(3);
+                            }
 
+                case "2" :  printMenu(9);
+                            break;
+
+                case "3" : //Εμφάνιση όλων των στοιχείων
+
+                default  :  printMenu(0);
+                            choise = sc.next();
+            }
 
         }
-
-
-
-
-            }
+    }
 }
 
