@@ -44,7 +44,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        printMenu(0);
+        printMenu(0);//hey
         String choise;
         Scanner sc = new Scanner(System.in);
         choise = sc.next();
