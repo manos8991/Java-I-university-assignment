@@ -50,27 +50,60 @@ public class Main {
         choise = sc.next();
         while(!choise.equals("quit")){
             Eticket Eticket1 = new Eticket();
-            switch(choise){
-                case "1" :  printMenu(1);
-                            Eticket1.setType(sc.next());
-                            while(!Eticket1.getType().equals("1") && !Eticket1.getType().equals("2")) {
-                                printMenu(1);
-                                Eticket1.setType(sc.next());
+            switch(choise) {
+                case "1":
+                    printMenu(1);                       //Αν επιλέξει έκδοση αγορά
+                    Eticket1.setType(sc.next());              //Διάβασε τον τύπο κανονικό ή μειωμένο
+                    while (!Eticket1.getType().equals("1") && !Eticket1.getType().equals("2")) {         //όσο δεν δίνει σωστές τιμές ξαναδιάβασε
+                        printMenu(1);
+                        Eticket1.setType(sc.next());
+                    }
+                    printMenu(2);                   //χρονική διάρκεια
+                    Eticket1.setDuration(sc.next());
+                    while (!Eticket1.getDuration().equals("1") && !Eticket1.getDuration().equals("2") && !Eticket1.getDuration().equals("3") && !Eticket1.
+                            getDuration().equals("4")) {     //όσο δεν δίνει σωστές τιμές ξαναδιάβασε
+                        printMenu(2);
+                        Eticket1.setDuration(sc.next());
+                    }
+                    if (Eticket1.getDuration().equals("1")) {     //Αν πατήσει το 1 (90 λεπτά) εμφάνισε την επιλογή διαδρομών
+                        printMenu(3);                    //Μενού διαδρομών
+                        Eticket1.setQuantityDestinations(sc.next());
+                        while (!Eticket1.getQuantityDestinations().equals("1") && !Eticket1.getQuantityDestinations().equals("2") && !Eticket1.
+                                getQuantityDestinations().equals("3")) {         //Όσο δίνει λάθος επιλογές ξαναδιάβασε
+                            printMenu(3);
+                            Eticket1.setQuantityDestinations(sc.next());
+                        }
+                        if (Eticket1.getType().equals("1")) {
+                            if (Eticket1.getDuration().equals("1")) {
+                                if (Eticket1.getQuantityDestinations().equals("1"))
+                                    Eticket1.setPrice(1.40);
+                                else if (Eticket1.getQuantityDestinations().equals("2"))
+                                    Eticket1.setPrice(7.00);
+                                else
+                                    Eticket1.setPrice(14.00);
+
                             }
-                            printMenu(2);
-                            Eticket1.setDuration(sc.next());
-                            if(Eticket1.getDuration().equals("1")){
-                                printMenu(3);
-                            }
+
+                        }
+
+
+                    }
+
+                    System.out.println(Eticket1.getPrice()+"€");
+                    break;
 
                 case "2" :  printMenu(9);
                             break;
 
                 case "3" : //Εμφάνιση όλων των στοιχείων
+                            break;
 
                 default  :  printMenu(0);
                             choise = sc.next();
+                            break;
             }
+            System.out.println("If you want to quit type : quit");
+            choise = sc.next();
 
         }
     }

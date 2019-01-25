@@ -3,8 +3,8 @@ public class Eticket {
     private String genre;          //Είδος εισιτηρίου
     private String type;               //Τύπος εισιτηρίου
     private String duration;           //Διάρκεια εισιτηρίου
-    private byte quantityDestinations;           //Ποσότητα εισιτηρίου
-    private float price;              //Τιμή εισιτηρίου
+    private String quantityDestinations;           //Πλήθος διαδρομών
+    private double  price;              //Τιμή εισιτηρίου
 
 
     //An einai meiomeno h miniaio tote theleis kai onomateponima kodiko kai hmeromhnia liksis
@@ -43,19 +43,19 @@ public class Eticket {
         this.duration = duration;
     }
 
-    public byte getQuantityDestinations() {
+    public String getQuantityDestinations() {
         return quantityDestinations;
     }
 
-    public void setQuantityDestinations(byte quantityDestinations) {
+    public void setQuantityDestinations(String quantityDestinations) {
         this.quantityDestinations = quantityDestinations;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
